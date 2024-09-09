@@ -21,7 +21,7 @@
           <!-- <p class="old-price mb-1"><del>$100</del> <span class="old-price-discount text-danger">(20% off)</span></p> -->
           <p class="new-price text-bold mb-1">{{product?.price|currency}}</p>
           <p class="text-secondary mb-1">(Additional tax may apply on checkout)</p>
-          <p class="new-price text-bold mb-1">{{product?.ratingAverage}} &star;</p>
+          <p class="new-price text-bold mb-1">{{product?.ratingAverage|number:'1.1-1'}} &star;</p>
         </div>
 
         <div class="buttons d-flex my-5">

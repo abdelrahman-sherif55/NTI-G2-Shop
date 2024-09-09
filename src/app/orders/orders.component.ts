@@ -3,12 +3,12 @@ import { Pagination } from '../interfaces/pagination';
 import { AuthService } from '../services/auth.service';
 import { OrdersService } from '../services/orders.service';
 import { GlobalService } from '../services/global.service';
-import { CurrencyPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-orders',
   standalone: true,
-  imports: [CurrencyPipe],
+  imports: [CommonModule],
   templateUrl: './orders.component.html',
   styleUrl: './orders.component.scss'
 })

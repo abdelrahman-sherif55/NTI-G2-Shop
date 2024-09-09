@@ -2,13 +2,13 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { WishlistService } from '../services/wishlist.service';
 import { AuthService } from './../services/auth.service';
 import { GlobalService } from '../services/global.service';
-import { CurrencyPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-wishlist',
   standalone: true,
-  imports: [CurrencyPipe],
+  imports: [CommonModule],
   templateUrl: './wishlist.component.html',
   styleUrl: './wishlist.component.scss'
 })

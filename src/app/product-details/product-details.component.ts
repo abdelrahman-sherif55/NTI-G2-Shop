@@ -1,8 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from '../services/products.service';
-import { CurrencyPipe, DatePipe } from '@angular/common';
-import { AuthService } from '../services/auth.service';
+import { CommonModule } from '@angular/common';
 import { WishlistService } from '../services/wishlist.service';
 import { CartService } from '../services/cart.service';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -11,7 +10,7 @@ import { ReviewsService } from '../services/reviews.service';
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [CurrencyPipe, DatePipe, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.scss'
 })
