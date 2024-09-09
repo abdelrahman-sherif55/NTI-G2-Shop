@@ -12,7 +12,7 @@
         <input class="form-control" type="text" placeholder="name" (change)="getName(userName.value)" #userName [value]="user.name">
       </div>
       <div class="w-75 m-auto my-4">
-        <input class="form-control" (change)="getFile($event)" type="file">
+        <input class="form-control" (change)="getFile($event)" type="file" accept="image/*">
       </div>
       <div class="w-75 m-auto my-4">
         <button (click)="updateUser()" class="btn btn-danger">Update Data</button>
