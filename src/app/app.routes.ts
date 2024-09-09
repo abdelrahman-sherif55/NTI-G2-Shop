@@ -13,8 +13,16 @@ export const routes: Routes = [
   { path: 'myReviews', canActivate: [authGuard], loadComponent: () => import('./reviews/reviews.component').then(m => m.ReviewsComponent) },
   { path: 'myOrders', canActivate: [authGuard], loadComponent: () => import('./orders/orders.component').then(m => m.OrdersComponent) },
   { path: 'profile', canActivate: [authGuard], loadComponent: () => import('./profile/profile.component').then(m => m.ProfileComponent) },
-  { path: 'signup', loadComponent: () => import('./signup/signup.component').then(m => m.SignupComponent) },
-  { path: 'login', loadComponent: () => import('./login/login.component').then(m => m.LoginComponent) },
-  { path: 'forgetPassword', loadComponent: () => import('./forget-password/forget-password.component').then(m => m.ForgetPasswordComponent) },
+  // { path: 'signup', loadComponent: () => import('./signup/signup.component').then(m => m.SignupComponent) },
+  // { path: 'login', loadComponent: () => import('./login/login.component').then(m => m.LoginComponent) },
+  // { path: 'forgetPassword', loadComponent: () => import('./forget-password/forget-password.component').then(m => m.ForgetPasswordComponent) },
+  {
+    path: 'account', children: [
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
+      { path: 'signup', loadComponent: () => import('./signup/signup.component').then(m => m.SignupComponent) },
+      { path: 'login', loadComponent: () => import('./login/login.component').then(m => m.LoginComponent) },
+      { path: 'forgetPassword', loadComponent: () => import('./forget-password/forget-password.component').then(m => m.ForgetPasswordComponent) },
+    ]
+  },
   { path: '**', component: NotFoundComponent }
 ];
